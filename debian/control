@@ -15,5 +15,6 @@ Tag: suite::iserv:portal, role::plugin
 
 Package: stsbl-iserv3-repo-mon
 Architecture: all
+Depends: stsbl-iserv3-maintenance
 Description: Stadtteilschule Blankenese: IServ 3 Repository-Statusmonitor
  Enthält die IServ 3-Dateien für den Repository-Statusmonitor.
