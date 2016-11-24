@@ -1,0 +1,3 @@
+share/* usr/share/iserv/
+lib/* /usr/lib/iserv/
+iconf/* /usr/share/iserv/iconf/

@@ -1,0 +1,7 @@
+# src/Stsbl/RepositoryMonitorBundle/Resources/config/services.yml
+services:
+    stsbl.repomon.dashboard:
+        class: Stsbl\RepositoryMonitorBundle\EventListener\AdminDashboardListener
+        arguments: ["@iserv.shell"]
+        tags:
+         - { name: kernel.event_listener, event: iserv_admin.build_dashboard, method: onBuildDashboard }

@@ -1,0 +1,8 @@
+msgid "%s updates (StsBl repository)"
+msgstr "%s-Updates (StsBl-Repository)"
+
+msgid "Your server is currently receiving %s updates from the repository of the Stadtteilschule Blankenese."
+msgstr "Ihr Server bezieht derzeit %s-Updates aus dem Repository der Stadtteilschule Blankenese."
+
+msgid "To change that, login as root and run the command stsbl-repoconfig."
+msgstr "Um das zu ändern, melden sie sich als root an und führen den Befehl stsbl-repoconfig aus."

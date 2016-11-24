@@ -1,0 +1,19 @@
+Source: stsbl-iserv-repo-mon
+Section: misc
+Priority: extra
+Maintainer: Stadtteilschule Blankenese <repository@stsbl.de>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+Homepage: https://it.stsbl.de/doc/general/update-mode
+
+Package: stsbl-iserv-repo-mon
+Architecture: all
+Depends: iserv-portal, stsbl-iserv3-repo-mon, stsbl-repoconfig
+Description: Stadtteilschule Blankenese: Repository-Statusmonitor
+ Zeigt den Status der Repository-Konfiguration auf dem IDesk an.
+Tag: suite::iserv:portal, role::plugin
+
+Package: stsbl-iserv3-repo-mon
+Architecture: all
+Description: Stadtteilschule Blankenese: IServ 3 Repository-Statusmonitor
+ Enthält die IServ 3-Dateien für den Repository-Statusmonitor.
