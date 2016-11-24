@@ -1,3 +1,12 @@
+stsbl-iserv-repo-mon (16.11.24-1) experimental; urgency=medium
+
+  [ Felix Jacobi ]
+  * Added required dependency on stsbl-iserv3-maintenance.
+
+  [ Stadtteilschule Blankenese ]
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Thu, 24 Nov 2016 06:53:47 +0100
+
 stsbl-iserv-repo-mon (16.11.24-0) experimental; urgency=medium
 
   [ Felix Jacobi ]
