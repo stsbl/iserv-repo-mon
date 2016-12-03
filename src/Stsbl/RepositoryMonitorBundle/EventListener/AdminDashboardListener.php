@@ -44,15 +44,17 @@ class AdminDashboardListener implements AdminDashboardListenerInterface {
             // Inject into IDesk
             $event->addContent(
                 'admin.stsblupdatemode',
-                'IServAdminBundle:Dashboard:status.html.twig',
-                array(
+                'StsblRepositoryMonitorBundle:Dashboard:status.html.twig',
+                [
                     'title' => __('%s updates (StsBl repository)', $mode),
                     'icon' => ['style' => 'fugue', 'name' => 'drive-globe'],
                     'text' => __('Your server is currently receiving %s updates from the repository of the Stadtteilschule Blankenese.', $mode),
                     'additional_info' => _('To change that, login as root and run the command stsbl-repoconfig.'),
                     'mode' => $mode,
+                    'link' => 'https://it.stsbl.de/documentation/general/update-mode',
+                    'link_text' => _('For more information please refer to our documentation'),
                     'panel_class' => 'panel-warning',
-                )
+                ]
             );
         }
     }
