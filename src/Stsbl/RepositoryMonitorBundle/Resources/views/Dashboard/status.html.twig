@@ -1,0 +1,17 @@
+{% extends 'IServCoreBundle:Dashboard:main.html.twig' %}
+
+{% block dashboard_content %}
+    {% if value is defined %}
+        {{ text|format(value) }}
+    {% else %}
+        <p>{{ text }}</p>
+    {% endif %}
+    {% if additional_info is defined %}
+        <p>{{ additional_info }}</p>
+    {% endif %}
+    {% if link is defined and link_text is defined %}
+        <p><a target="_blank" href="{{ link }}">{{ link_text }}</a></p>
+    {% endif %}
+{% endblock dashboard_content %}
+
+{% block dashboard_footer_panel %}{% endblock dashboard_footer_panel %}
