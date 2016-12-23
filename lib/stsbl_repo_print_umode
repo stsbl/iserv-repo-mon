@@ -1,9 +1,7 @@
 #!/bin/bash -e
 
-if [ -f "/var/lib/stsbl/repoconfig.sh" ]
-then
-  . /var/lib/stsbl/repoconfig.sh
-fi
+# source config
+. /usr/lib/iserv/stsblrepocfg
 
 if [ -v REPOUPDATEMODE ] && ! [ "$REPOUPDATEMODE" = "" ]
 then
