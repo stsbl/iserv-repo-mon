@@ -1,0 +1,4 @@
+Test "stsbl-repo-mon news abo"
+  "grep ^90defaults/80stsbl-repo-mon$ /var/lib/iserv/config/update.log"
+  "psql iserv postgres -f /usr/share/iserv/db/default/stsbl_repo_mon.sql &&
+    echo 90defaults/80stsbl-repo-mon >> /var/lib/iserv/config/update.log"
