@@ -5,7 +5,7 @@ msgid "Your server is currently receiving %s updates from the repository of the 
 msgstr "Ihr Server bezieht derzeit %s-Updates aus dem Repository der Stadtteilschule Blankenese."
 
 msgid "To change that, login as root and run the command stsbl-repoconfig."
-msgstr "Um das zu ändern, melden sie sich als root an und führen den Befehl stsbl-repoconfig aus."
+msgstr "Um das zu ändern, melden Sie sich als root an und führen den Befehl stsbl-repoconfig aus."
 
 msgid "For more information please refer to our documentation"
 msgstr "Für mehr Informationen lesen Sie unsere Dokumentation"
