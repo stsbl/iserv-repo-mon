@@ -1,3 +1,19 @@
+stsbl-iserv-repo-mon (17.01.27-0) experimental; urgency=medium
+
+  [ Felix Jacobi ]
+  * Changed path of config library.
+  * Updated debian copyright.
+  * Fixed l10n.
+  * Updated copyright.
+    Note: License has been changed from GPL3.0+ tom MIT.
+  * Removed docs file.
+  * Added default adding of the admin feed by the Stadtteilschule Blankenese.
+  * Only insert feed, if news module is installed.
+
+  iserv: Das Repository unserer Schule unterhält nun für wichtige Ankündigungen ebenfalls einen Feed ähnlich wie die IServ Admin Announcements. Er wurde standardmäßig nur für Administratoren sichtbar zu den Abonnements der News hinzugefügt.
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Fri, 27 Jan 2017 22:52:50 +0100
+
 stsbl-iserv-repo-mon (16.12.03-0) experimental; urgency=medium
 
   [ Felix Jacobi ]
