@@ -11,10 +11,4 @@ Architecture: all
 Depends: iserv-portal, stsbl-iserv3-repo-mon, stsbl-repoconfig
 Description: Stadtteilschule Blankenese: Repository-Statusmonitor
  Zeigt den Status der Repository-Konfiguration auf dem IDesk an.
-Tag: suite::iserv:portal, role::plugin
-
-Package: stsbl-iserv3-repo-mon
-Architecture: all
-Depends: stsbl-iserv3-maintenance
-Description: Stadtteilschule Blankenese: IServ 3 Repository-Statusmonitor
- Enthält die IServ 3-Dateien für den Repository-Statusmonitor.
+Tag: suite::iserv:portal, role::plugin, implemented-in::php
