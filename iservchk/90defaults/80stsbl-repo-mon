@@ -1,5 +1,0 @@
-# Only apply on servers which have iserv-news installed
-Test "stsbl-repo-mon news abo"
-  "grep ^90defaults/80stsbl-repo-mon$ /var/lib/iserv/config/update.log"
-  "if [[ $(dpkg-query --showformat='${Status}\n' --show 'iserv-news' 2> /dev/null | grep 'install ok installed') ]]; then psql iserv postgres -f /usr/share/iserv/db/default/stsbl_repo_mon.sql &&
-    echo 90defaults/80stsbl-repo-mon >> /var/lib/iserv/config/update.log; else echo 90defaults/80stsbl-repo-mon >> /var/lib/iserv/config/update.log; fi"
