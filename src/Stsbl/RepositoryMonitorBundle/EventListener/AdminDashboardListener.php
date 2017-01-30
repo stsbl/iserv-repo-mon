@@ -9,7 +9,7 @@ use Stsbl\RepositoryMonitorBundle\Security\Privilege;
 
 /**
  * @author Felix Jacobi <felix.jacobi@stsbl.de>
- * @license GNU General Public License <http://gnu.org/licenses/gpl-3.0>
+ * @license MIT license <https://opensource.org/licenses/MIT>
  */
 class AdminDashboardListener implements AdminDashboardListenerInterface 
 {
