@@ -11,7 +11,8 @@ use Stsbl\RepositoryMonitorBundle\Security\Privilege;
  * @author Felix Jacobi <felix.jacobi@stsbl.de>
  * @license GNU General Public License <http://gnu.org/licenses/gpl-3.0>
  */
-class AdminDashboardListener implements AdminDashboardListenerInterface {
+class AdminDashboardListener implements AdminDashboardListenerInterface 
+{
     /**
      * @var Shell
      */
