@@ -8,7 +8,7 @@ namespace Stsbl\RepositoryMonitorBundle\Security;
  * @author Felix Jacobi <felix.jacobi@stsbl.de>
  * @license GNU General Public License <http://gnu.org/licenses/gpl-3.0>
  */
-class Privilege 
+final class Privilege 
 {
     /**
      * Viewing status warnings for the IServ Portalserver
