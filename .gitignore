@@ -1,8 +1,5 @@
-debian/stsbl-iserv-repo-mon/*
 debian/stsbl-iserv3-repo-mon/*
-debian/stsbl-iserv-repo-mon.debhelper.log
 debian/stsbl-iserv3-repo-mon.debhelper.log
-debian/stsbl-iserv-repo-mon.substvars
 debian/stsbl-iserv3-repo-mon.substvars
 debian/debhelper-build-stamp
 debian/files
