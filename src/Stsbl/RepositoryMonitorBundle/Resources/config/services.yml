@@ -1,7 +1,13 @@
 # src/Stsbl/RepositoryMonitorBundle/Resources/config/services.yml
 services:
-    stsbl.repomon.dashboard:
+    stsbl.repomon.admin.dashboard:
         class: Stsbl\RepositoryMonitorBundle\EventListener\AdminDashboardListener
         arguments: ["@iserv.shell"]
         tags:
          - { name: kernel.event_listener, event: iserv_admin.build_dashboard, method: onBuildDashboard }
+         
+    stsbl.repomon.idesk:
+        class: Stsbl\RepositoryMonitorBundle\EventListener\IDeskListener
+        arguments: ["@iserv.shell"]
+        tags:
+         - { name: kernel.event_listener, event: iserv_portal.build_idesk, method: onBuildIDesk }

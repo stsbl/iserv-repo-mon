@@ -3,6 +3,7 @@
 namespace Stsbl\RepositoryMonitorBundle\EventListener;
 
 use IServ\AdminBundle\Event\AdminDashboardEvent;
+use IServ\AdminBundle\Event\AdminHomeEvent;
 use IServ\AdminBundle\EventListener\AdminDashboardListenerInterface;
 use IServ\CoreBundle\Service\Shell;
 use Stsbl\RepositoryMonitorBundle\Security\Privilege;
@@ -13,49 +14,29 @@ use Stsbl\RepositoryMonitorBundle\Security\Privilege;
  */
 class AdminDashboardListener implements AdminDashboardListenerInterface 
 {
-    /**
-     * @var Shell
-     */
-    private $shell;
+    use ShellTrait;
     
-    /**
-     * Inject shell into listener
-     * 
-     * @param Shell $shell
-     */
-    public function __construct(Shell $shell)
-    {
-        $this->shell = $shell;
-    }
-
     /**
      * {@inheritdoc}
      */
     public function onBuildDashboard(AdminDashboardEvent $event)
     {
-        if(!$event->getAuthorizationChecker()->isGranted(Privilege::SRV_WARN)) {
+        if (!$event->getAuthorizationChecker()->isGranted(Privilege::SRV_WARN)) {
             // exit if user is not allowed to see status warnings
             return;
         }
         
-        $this->shell->exec('sudo', ['/usr/lib/iserv/stsbl_repo_print_umode']);
-        $mode = trim(implode('', $this->shell->getOutput()));
+        $mode = $this->getUpdateMode();
         
-        if ('testing' === $mode || 'unstable' === $mode) {
-            // Inject into IDesk
+        if ($event instanceof AdminHomeEvent && 'testing' === $mode) {
+            // don't add message on testing updates, as it is shown as "dangerous", IDeskListener handles this case.
+            return;
+        } else if ('unstable' === $mode || $mode === $testing) {
+            // Inject into admin dashboard
             $event->addContent(
                 'admin.stsblupdatemode',
                 'StsblRepositoryMonitorBundle:Dashboard:status.html.twig',
-                [
-                    'title' => __('%s updates (StsBl repository)', $mode),
-                    'icon' => ['style' => 'fugue', 'name' => 'drive-globe'],
-                    'text' => __('Your server is currently receiving %s updates from the repository of the Stadtteilschule Blankenese.', $mode),
-                    'additional_info' => _('To change that, login as root and run the command stsbl-repoconfig.'),
-                    'mode' => $mode,
-                    'link' => 'https://it.stsbl.de/documentation/general/update-mode',
-                    'link_text' => _('For more information please refer to our documentation'),
-                    'panel_class' => 'panel-warning',
-                ]
+                $this->getDashboardData($mode)
             );
         }
     }
