@@ -1,0 +1,11 @@
+stsbl-iserv3-repo-mon (17.02.19-0) experimental; urgency=medium
+
+  [ Felix Jacobi ]
+  * Syntax improvements.
+  * Made privilege container final.
+  * Updated copyright.
+  * Moved IServ 3 files to their own source package.
+  * Updated .gitignore.
+  * Don't show testing update mode as critical warning on IDesk.
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Sun, 19 Feb 2017 19:50:01 +0100
