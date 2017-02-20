@@ -31,7 +31,7 @@ class AdminDashboardListener implements AdminDashboardListenerInterface
         if ($event instanceof AdminHomeEvent && 'testing' === $mode) {
             // don't add message on testing updates, as it is shown as "dangerous", IDeskListener handles this case.
             return;
-        } else if ('unstable' === $mode || $mode === $testing) {
+        } else if ('unstable' === $mode || $mode === 'testing') {
             // Inject into admin dashboard
             $event->addContent(
                 'admin.stsblupdatemode',
