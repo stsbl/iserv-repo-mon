@@ -1,3 +1,13 @@
+stsbl-iserv3-repo-mon (17.03.30-0) experimental; urgency=medium
+
+  [ Felix Jacobi ]
+  * Syntax improvements.
+  * Added missing permission check for the notice box on IDesk.
+    Thanks to Fabian Gätje for the bug report.
+  * Updated l10n.
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Thu, 30 Mar 2017 17:35:35 +0200
+
 stsbl-iserv3-repo-mon (17.02.21-0) experimental; urgency=medium
 
   [ Felix Jacobi ]
