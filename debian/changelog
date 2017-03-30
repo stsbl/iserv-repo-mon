@@ -1,12 +1,10 @@
 stsbl-iserv-repo-mon (17.03.30-0) experimental; urgency=medium
 
-  * Update changelog for 16.12.23-0 release.
+  [ Felix Jacobi ]
   * Updated install file.
   * Syntax improvements.
   * Made privilege container final.
   * Updated copyright.
-  * Moved IServ 3 files to their own source package.
-  * Updated .gitignore.
   * Updated l10n.
 
  -- Stadtteilschule Blankenese <repository@stsbl.de>  Thu, 30 Mar 2017 17:37:42 +0200
