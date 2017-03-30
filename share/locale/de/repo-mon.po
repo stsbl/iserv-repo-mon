@@ -1,3 +1,10 @@
+msgid ""
+msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-19 15:44+0100\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
 msgid "%s updates (StsBl repository)"
 msgstr "%s-Updates (StsBl-Repository)"
 
