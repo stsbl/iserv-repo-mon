@@ -4,6 +4,7 @@ namespace Stsbl\RepositoryMonitorBundle\EventListener;
 
 use IServ\CoreBundle\Event\IDeskEvent;
 use IServ\CoreBundle\EventListener\IDeskListenerInterface;
+use Stsbl\RepositoryMonitorBundle\Security\Privilege;
 
 /*
  * The MIT License
@@ -42,6 +43,10 @@ class IDeskListener implements IDeskListenerInterface
      */
     public function onBuildIDesk(IDeskEvent $event) 
     {
+        if (!$event->getAuthorizationChecker()->isGranted(Privilege::SRV_WARN)) {
+            // exit if user is not allowed to see status warnings
+            return;
+        }
         $mode = $this->getUpdateMode();
         
         if ($mode === 'testing') {
