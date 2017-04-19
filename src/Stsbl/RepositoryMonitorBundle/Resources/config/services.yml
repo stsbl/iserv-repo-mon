@@ -11,3 +11,8 @@ services:
         arguments: ["@iserv.shell"]
         tags:
          - { name: kernel.event_listener, event: iserv_portal.build_idesk, method: onBuildIDesk }
+         
+    stsbl.repomon.menu:
+        class: Stsbl\RepositoryMonitorBundle\EventListener\MenuListener
+        tags:
+         - { name: kernel.event_listener, event: iserv_portal.menu_admin, method: onBuildAdminMenu } # Tells IServ about the admin menu method
