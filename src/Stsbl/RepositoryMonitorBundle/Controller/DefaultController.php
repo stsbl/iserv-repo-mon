@@ -128,7 +128,7 @@ class DefaultController extends PageController
             
             if (count($errors) > 0) {
                 foreach ($errors as $e) {
-                    $this->get('iserv.flash')->error((string)$e);
+                    $this->get('iserv.flash')->error($e->getMessage());
                 }
             }
         }
