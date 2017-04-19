@@ -8,7 +8,7 @@ Homepage: https://it.stsbl.de/documentation/general/update-mode
 
 Package: stsbl-iserv-repo-mon
 Architecture: all
-Depends: iserv-portal, stsbl-iserv3-repo-mon, stsbl-repoconfig
+Depends: iserv-portal, stsbl-iserv3-repo-mon, stsbl-repoconfig, stsbl-iserv-perl-lib
 Description: Stadtteilschule Blankenese: Repository-Statusmonitor
  Zeigt den Status der Repository-Konfiguration auf dem IDesk an.
 Tag: suite::iserv:portal, role::plugin, implemented-in::php
