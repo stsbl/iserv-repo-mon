@@ -16,3 +16,6 @@ msgstr "Um das zu ändern, melden Sie sich als root an und führen den Befehl st
 
 msgid "For more information please refer to our documentation"
 msgstr "Für mehr Informationen lesen Sie unsere Dokumentation"
+
+msgid "StsBl repository status monitor"
+msgstr "StsBl Repository-Statusmonitor"
