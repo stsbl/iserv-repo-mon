@@ -137,7 +137,8 @@ class DefaultController extends PageController
         $this->addBreadcrumb(_('StsBl-Repository: credentials'), $this->generateUrl('admin_stsbl_repomon_credentials'));
         
         return [
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'help' => 'https://it.stsbl.de/repository/access',
         ];
     }
 }
