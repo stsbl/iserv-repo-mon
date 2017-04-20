@@ -1,3 +1,14 @@
+stsbl-iserv3-repo-mon (17.04.20-0) experimental; urgency=medium
+
+  [ Felix Jacobi ]
+  * Added ui for credential input.
+  * Updated l10n.
+  * Updated help link.
+
+  iserv: Mit der neuen Version steht unter dem Menüpunkt "Verwaltung" > "System" > "StsBl-Repository: Zugangsdaten" eine grafische Oberfläche für die Eingabe der Repository-Zugangsdaten zur Verfügung, dafür ist kein Zugriff auf die Rootshell mehr notwendig. Dies sollte insbesondere für Schulen interessant sein, die keinen Root-Zugriff auf ihren Server haben.
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Thu, 20 Apr 2017 14:19:09 +0200
+
 stsbl-iserv3-repo-mon (17.03.30-0) experimental; urgency=medium
 
   [ Felix Jacobi ]
