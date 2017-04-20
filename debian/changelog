@@ -1,3 +1,12 @@
+stsbl-iserv-repo-mon (17.04.20-0) experimental; urgency=medium
+
+  [ Felix Jacobi ]
+  * Added command for storing new credentials via web interface.
+  * Added dependency on stsbl-iserv-perl-lib.
+  * Updated l10n.
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Thu, 20 Apr 2017 14:17:12 +0200
+
 stsbl-iserv-repo-mon (17.03.30-0) experimental; urgency=medium
 
   [ Felix Jacobi ]
