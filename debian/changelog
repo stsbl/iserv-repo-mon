@@ -1,3 +1,12 @@
+stsbl-iserv-repo-mon (17.04.20-1) experimental; urgency=medium
+
+  [ Felix Jacobi ]
+  * Fixed compilation error: Bareword "Stsbl::IServ::Security::req_admin" 
+    not allowed while "strict subs" in use at 
+    /usr/lib/iserv/stsbl_repo_store_credentials line 39.
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Thu, 20 Apr 2017 14:45:52 +0200
+
 stsbl-iserv-repo-mon (17.04.20-0) experimental; urgency=medium
 
   [ Felix Jacobi ]
