@@ -1,3 +1,14 @@
+stsbl-iserv-repo-mon (17.04.23-0) experimental; urgency=medium
+
+  [ Felix Jacobi ]
+  * bugfixes:
+    - Fixed typo in logs.
+    - Fixed typos in messages.
+  * enhancements:
+    - Added more detailed explaination for message "Couldn't determine current update mode!"
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Sun, 23 Apr 2017 16:35:53 +0200
+
 stsbl-iserv-repo-mon (17.04.20-1) experimental; urgency=medium
 
   [ Felix Jacobi ]
