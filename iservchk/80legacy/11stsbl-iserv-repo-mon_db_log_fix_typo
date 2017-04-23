@@ -1,0 +1,6 @@
+Test "stsbl-iserv-repo-mon - fix log typo"
+  "grep ^11stsbl-iserv-repo-mon_db_log_fix_typo /var/lib/iserv/config/update.log"
+  "psql -c \"UPDATE log SET text = 'Neue Zugangsdaten für das StsBl-Repository eingetragen' \
+     WHERE text = 'Neue Zugangdaten für das StsBl-Repository eingetragen'\" iserv postgres &&
+     echo 11stsbl-iserv-repo-mon_db_log_fix_typo >> /var/lib/iserv/config/update.log"
+
