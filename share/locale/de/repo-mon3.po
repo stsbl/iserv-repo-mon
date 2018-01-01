@@ -1,14 +1,14 @@
 # TRANSLATION CATALOG OF STSBL-ISERV3-REPO-MON.
-# Copyright (C) 2017 Stadtteilschule Blankenese
+# Copyright (C) 2018 Stadtteilschule Blankenese
 # This file is distributed under the same license as the stsbl-iserv3-repo-mon package.
-# Stadtteilschule Blankenese <repository@stsbl.de>, 2017.
+# Stadtteilschule Blankenese <repository@stsbl.de>, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: stsbl-iserv3-repo-mon\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-20 01:14+0200\n"
-"PO-Revision-Date: 2017-03-30 17:27+0200\n"
+"POT-Creation-Date: 2018-04-20 01:14+0200\n"
+"PO-Revision-Date: 2018-03-30 17:27+0200\n"
 "Last-Translator: root <repository@stsbl.de>\n"
 "Language-Team: German\n"
 "Language: de\n"
