@@ -1,3 +1,10 @@
+stsbl-iserv-repo-mon (18.11.25-1) experimental; urgency=medium
+
+  * Updated packaging
+  * Updated build rules for webpack support
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Sun, 25 Nov 2018 22:48:02 +0100
+
 stsbl-iserv-repo-mon (17.04.23-0) experimental; urgency=medium
 
   [ Felix Jacobi ]
