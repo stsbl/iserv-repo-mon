@@ -40,7 +40,8 @@ class MenuListener implements AdminMenuListenerInterface
     /**
      * {@inheritdoc}
      */
-    public function onBuildAdminMenu(MenuEvent $event) {
+    public function onBuildAdminMenu(MenuEvent $event): void
+    {
         $menu = $event->getMenu()->getChild('system');
         
         $item = $menu->addChild('stsbl_repomon_credentials', [
@@ -51,5 +52,4 @@ class MenuListener implements AdminMenuListenerInterface
         $item->setExtra('icon', 'key--pencil');
         $item->setExtra('icon_style', 'fugue');
     }
-
 }

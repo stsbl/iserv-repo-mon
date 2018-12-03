@@ -1,14 +1,19 @@
-<?php
-// src/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php
+<?php declare(strict_types = 1);
+
 namespace Stsbl\RepositoryMonitorBundle\Controller;
 
-use IServ\CoreBundle\Controller\PageController;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use IServ\CoreBundle\Controller\AbstractPageController;
+use IServ\CoreBundle\Exception\ShellExecException;
+use IServ\CoreBundle\Security\Core\SecurityHandler;
+use IServ\CoreBundle\Service\Flash;
+use IServ\CoreBundle\Service\Shell;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\FormInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
 /*
@@ -37,18 +42,13 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 
 /**
  * Frontend for entering credentials
- * 
+ *
  * @author Felix Jacobi <felix.jacobi@stsbl.de>
  * @license MIT license <https://opensource.org/licenses/MIT>
  */
-class DefaultController extends PageController
+class DefaultController extends AbstractPageController
 {
-    /**
-     * Creates form for entering credentials
-     * 
-     * @return \Symfony\Component\Form\Form
-     */
-    private function getCredentialsForm()
+    private function getCredentialsForm(): FormInterface
     {
         /* @var $builder \Symfony\Component\Form\FormBuilder */
         $builder = $this->get('form.factory')->createNamedBuilder('stsbl_repo_mon_credentials');
@@ -82,25 +82,29 @@ class DefaultController extends PageController
     
     /**
      * Displays form for entering credentials.
-     * 
-     * @param Request $request
-     * @return array
+     *
      * @Route("/admin/stsblrepomon/credentials", name="admin_stsbl_repomon_credentials")
      * @Template()
      */
-    public function credentialsAction(Request $request)
-    {
+    public function credentialsAction(
+        Request $request,
+        Flash $flash,
+        SecurityHandler $securityHandler,
+        Shell $shell
+    ): array {
         $form = $this->getCredentialsForm();
         $form->handleRequest($request);
         
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
-            /* @var $shell \IServ\CoreBundle\Service\Shell */
-            $shell = $this->get('iserv.shell');
             
             $ip = $request->getClientIp();
-            $fwdIp = preg_replace("/.*,\s*/", "", @$_SERVER["HTTP_X_FORWARDED_FOR"]);
-            $sessionPassword = $this->get('iserv.security_handler')->getSessionPassword();
+            $fwdIp = preg_replace(
+                '/.*,\s*/',
+                '',
+                $request->server->get('HTTP_X_FORWARDED_FOR', '')
+            );
+            $sessionPassword = $securityHandler->getSessionPassword();
             
             $args = [
                 $this->getUser()->getUsername(),
@@ -113,23 +117,19 @@ class DefaultController extends PageController
                 'IP' => $ip,
                 'IPFWD' => $fwdIp,
             ];
-            
-            $shell->exec('closefd setsid sudo /usr/lib/iserv/stsbl_repo_store_credentials', $args, null, $env);
-            
-            if (count($shell->getOutput()) > 0) {
-                $this->get('iserv.flash')->success(implode("\n", $shell->getOutput()));
+
+            try {
+                $shell->exec('sudo /usr/lib/iserv/stsbl_repo_store_credentials', $args, null, $env);
+            } catch (ShellExecException $e) {
+                throw new \RuntimeException('Failed to run stsbl_repo_store_credentials!', 0, $e);
+            }
+
+            if (!empty($shell->getOutput())) {
+                $flash->success(implode("\n", $shell->getOutput()));
             }
             
-            if (count($shell->getError()) > 0) {
-                $this->get('iserv.flash')->error(implode("\n", $shell->getError()));
-            }
-        } else {
-            $errors = $form->getErrors(true);
-            
-            if (count($errors) > 0) {
-                foreach ($errors as $e) {
-                    $this->get('iserv.flash')->error($e->getMessage());
-                }
+            if (!empty($shell->getError())) {
+                $flash->error(implode("\n", $shell->getError()));
             }
         }
         

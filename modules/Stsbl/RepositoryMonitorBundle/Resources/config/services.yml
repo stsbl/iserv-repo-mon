@@ -1,18 +1,20 @@
-# src/Stsbl/RepositoryMonitorBundle/Resources/config/services.yml
 services:
-    stsbl.repomon.admin.dashboard:
-        class: Stsbl\RepositoryMonitorBundle\EventListener\AdminDashboardListener
-        arguments: ["@iserv.shell"]
+    _defaults:
+        autoconfigure: true
+        autowire: true
+        public: false
+
+    Stsbl\RepositoryMonitorBundle\:
+        resource: '../../*'
+
+    Stsbl\RepositoryMonitorBundle\EventListener\AdminDashboardListener:
         tags:
          - { name: kernel.event_listener, event: iserv_admin.build_dashboard, method: onBuildDashboard }
          
-    stsbl.repomon.idesk:
-        class: Stsbl\RepositoryMonitorBundle\EventListener\IDeskListener
-        arguments: ["@iserv.shell"]
+    Stsbl\RepositoryMonitorBundle\EventListener\IDeskListener:
         tags:
          - { name: kernel.event_listener, event: iserv_portal.build_idesk, method: onBuildIDesk }
          
-    stsbl.repomon.menu:
-        class: Stsbl\RepositoryMonitorBundle\EventListener\MenuListener
+    Stsbl\RepositoryMonitorBundle\EventListener\MenuListener:
         tags:
-         - { name: kernel.event_listener, event: iserv_portal.menu_admin, method: onBuildAdminMenu } # Tells IServ about the admin menu method
+         - { name: kernel.event_listener, event: iserv_portal.menu_admin, method: onBuildAdminMenu }

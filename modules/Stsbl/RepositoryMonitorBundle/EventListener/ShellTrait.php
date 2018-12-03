@@ -1,7 +1,7 @@
-<?php
-// src/Stsbl/RepositoryMonitorBundle/EventListener/ShellTrait.php
+<?php declare(strict_types = 1);
 namespace Stsbl\RepositoryMonitorBundle\EventListener;
 
+use IServ\CoreBundle\Exception\ShellExecException;
 use IServ\CoreBundle\Service\Shell;
 
 /*
@@ -32,7 +32,7 @@ use IServ\CoreBundle\Service\Shell;
  * @author Felix Jacobi <felix.jacobi@stsbl.de>
  * @license MIT license <https://opensource.org/licenses/MIT>
  */
-trait ShellTrait 
+trait ShellTrait
 {
     /**
      * @var Shell
@@ -41,7 +41,7 @@ trait ShellTrait
     
     /**
      * Inject shell into listener
-     * 
+     *
      * @param Shell $shell
      */
     public function __construct(Shell $shell)
@@ -51,22 +51,24 @@ trait ShellTrait
     
     /**
      * Get current update mode
-     * 
-     * @return string
      */
-    protected function getUpdateMode()
+    protected function getUpdateMode(): string
     {
-        $this->shell->exec('sudo', ['/usr/lib/iserv/stsbl_repo_print_umode']);
+        try {
+            $this->shell->exec('sudo', ['/usr/lib/iserv/stsbl_repo_print_umode']);
+        } catch (ShellExecException $e) {
+            throw new \RuntimeException('Failed to run stsbl_repo_print_umode!', 0, $e);
+        }
+
         return trim(implode('', $this->shell->getOutput()));
     }
     
     /**
      * Get data for dashboard
-     * 
-     * @param string $mode
-     * @return array<string>
+     *
+     * @return string[]
      */
-    protected function getDashboardData($mode)
+    protected function getDashboardData(string $mode): array
     {
         return [
             'title' => __('%s updates (StsBl repository)', $mode),

@@ -4,6 +4,7 @@ namespace Stsbl\RepositoryMonitorBundle\EventListener;
 
 use IServ\CoreBundle\Event\IDeskEvent;
 use IServ\CoreBundle\EventListener\IDeskListenerInterface;
+use IServ\CoreBundle\Util\System;
 use Stsbl\RepositoryMonitorBundle\Security\Privilege;
 
 /*
@@ -41,15 +42,16 @@ class IDeskListener implements IDeskListenerInterface
     /**
      * {@inheritdoc}
      */
-    public function onBuildIDesk(IDeskEvent $event) 
+    public function onBuildIDesk(IDeskEvent $event): void
     {
         if (!$event->getAuthorizationChecker()->isGranted(Privilege::SRV_WARN)) {
             // exit if user is not allowed to see status warnings
             return;
         }
+
         $mode = $this->getUpdateMode();
         
-        if ($mode === 'testing') {
+        if (System::UPDATEMODE_TESTING === $mode) {
             $event->addSidebarContent(
                 'admin.stsblupdatemode',
                 'StsblRepositoryMonitorBundle:Dashboard:status.html.twig',
@@ -58,5 +60,4 @@ class IDeskListener implements IDeskListenerInterface
             );
         }
     }
-
 }
