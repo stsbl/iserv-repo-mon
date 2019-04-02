@@ -14,7 +14,7 @@ Depends: ${misc:Depends},
   iserv-portal,
   stsbl-iserv-perl-lib,
   stsbl-iserv3-maintenance,
-  stsbl-repoconfig,
+  stsbl-repoconfig (>= 19.04.03),
 Conflicts: stsbl-iserv3-repo-mon,
 Replaces: stsbl-iserv3-repo-mon,
 Xb-Private-IServ-Revision: ${iserv:Revision}
