@@ -3,7 +3,7 @@ stsbl-iserv-repo-mon (19.04.03-1) experimental; urgency=medium
   * Removed v2 support
   * Removed update mode support
 
- -- Felix Jacobi <Felix@jacobi-hamburg.net>  Wed, 03 Apr 2019 01:41:51 +0200
+ -- Felix Jacobi <Felix@jacobi-hamburg.net>  Wed, 03 Apr 2019 01:46:17 +0200
 
 stsbl-iserv-repo-mon (18.11.25-1) experimental; urgency=medium
 
