@@ -39,7 +39,7 @@ use Stsbl\RepositoryMonitorBundle\Security\Privilege;
  */
 class AdminDashboardListener implements AdminDashboardListenerInterface
 {
-    use ShellTrait;
+    use UpdateModeTrait;
     
     /**
      * {@inheritdoc}

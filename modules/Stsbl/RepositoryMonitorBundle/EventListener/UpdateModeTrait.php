@@ -3,6 +3,7 @@ namespace Stsbl\RepositoryMonitorBundle\EventListener;
 
 use IServ\CoreBundle\Exception\ShellExecException;
 use IServ\CoreBundle\Service\Shell;
+use IServ\CoreBundle\Util\System;
 
 /*
  * The MIT License
@@ -32,35 +33,14 @@ use IServ\CoreBundle\Service\Shell;
  * @author Felix Jacobi <felix.jacobi@stsbl.de>
  * @license MIT license <https://opensource.org/licenses/MIT>
  */
-trait ShellTrait
+trait UpdateModeTrait
 {
-    /**
-     * @var Shell
-     */
-    protected $shell;
-    
-    /**
-     * Inject shell into listener
-     *
-     * @param Shell $shell
-     */
-    public function __construct(Shell $shell)
-    {
-        $this->shell = $shell;
-    }
-    
     /**
      * Get current update mode
      */
     protected function getUpdateMode(): string
     {
-        try {
-            $this->shell->exec('sudo', ['/usr/lib/iserv/stsbl_repo_print_umode']);
-        } catch (ShellExecException $e) {
-            throw new \RuntimeException('Failed to run stsbl_repo_print_umode!', 0, $e);
-        }
-
-        return trim(implode('', $this->shell->getOutput()));
+        return trim(file_get_contents('/etc/iserv/update'));
     }
     
     /**
@@ -74,7 +54,6 @@ trait ShellTrait
             'title' => __('%s updates (StsBl repository)', $mode),
             'icon' => ['style' => 'fugue', 'name' => 'drive-globe'],
             'text' => __('Your server is currently receiving %s updates from the repository of the Stadtteilschule Blankenese.', $mode),
-            'additional_info' => _('To change that, login as root and run the command stsbl-repoconfig.'),
             'mode' => $mode,
             'link' => 'https://it.stsbl.de/documentation/general/update-mode',
             'link_text' => _('For more information please refer to our documentation'),

@@ -6,9 +6,6 @@
     {% else %}
         <p>{{ text }}</p>
     {% endif %}
-    {% if additional_info is defined %}
-        <p>{{ additional_info }}</p>
-    {% endif %}
     {% if link is defined and link_text is defined %}
         <p><a target="_blank" href="{{ link }}">{{ link_text }}</a></p>
     {% endif %}

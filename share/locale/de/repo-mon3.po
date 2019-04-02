@@ -1,14 +1,14 @@
 # TRANSLATION CATALOG OF STSBL-ISERV3-REPO-MON.
-# Copyright (C) 2018 Stadtteilschule Blankenese
+# Copyright (C) 2017 Stadtteilschule Blankenese
 # This file is distributed under the same license as the stsbl-iserv3-repo-mon package.
-# Stadtteilschule Blankenese <repository@stsbl.de>, 2018.
+# Stadtteilschule Blankenese <repository@stsbl.de>, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: stsbl-iserv3-repo-mon\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-20 01:14+0200\n"
-"PO-Revision-Date: 2018-03-30 17:27+0200\n"
+"POT-Creation-Date: 2019-04-03 00:51+0200\n"
+"PO-Revision-Date: 2017-03-30 17:27+0200\n"
 "Last-Translator: root <repository@stsbl.de>\n"
 "Language-Team: German\n"
 "Language: de\n"
@@ -17,31 +17,59 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: /tmp/repo-mon-StsblRepositoryMonitorBundle.twig.php:211
-#: src/Stsbl/RepositoryMonitorBundle/EventListener/MenuListener.php:48
-#: src/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php:137
+#: /tmp/repo-mon-StsblRepositoryMonitorBundle.twig.php:223
+#: modules/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php:137
+#: modules/Stsbl/RepositoryMonitorBundle/EventListener/MenuListener.php:49
 msgid "StsBl-Repository: credentials"
 msgstr "StsBl-Repository: Zugangsdaten"
 
-#: /tmp/repo-mon-StsblRepositoryMonitorBundle.twig.php:239
+#: /tmp/repo-mon-StsblRepositoryMonitorBundle.twig.php:251
 msgid ""
 "Credentials entered in the past are still saved, but not displayed for "
 "security reasons."
 msgstr ""
-"Zugangsdaten, die in der Vergangenheit eingegeben wurden, sind "
-"weiterhin gespeichert, werden aber aus Sicherheitsgründen "
-"nicht angezeigt."
+"Zugangsdaten, die in der Vergangenheit eingegeben wurden, sind weiterhin "
+"gespeichert, werden aber aus Sicherheitsgründen nicht angezeigt."
 
-#: /tmp/repo-mon-StsblRepositoryMonitorBundle.twig.php:246
+#: /tmp/repo-mon-StsblRepositoryMonitorBundle.twig.php:258
 msgid "Update credentials for the StsBl-Repository"
 msgstr "Zugangsdaten für das StsBl-Repository aktualisieren"
 
-#: src/Stsbl/RepositoryMonitorBundle/EventListener/ShellTrait.php:72
+#: modules/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php:58
+msgid "Access number"
+msgstr "Zugangsnummer"
+
+#: modules/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php:60
+msgid "Please enter the access number which you received via e-mail."
+msgstr ""
+"Bitte geben Sie die Zugangsnummer ein, die Sie per E-Mail erhalten haben."
+
+#: modules/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php:63
+msgid "Access number is required."
+msgstr "Zugangsnummer wird benötigt."
+
+#: modules/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php:66
+msgid "Access password"
+msgstr "Zugangspasswort"
+
+#: modules/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php:68
+msgid "Please enter the matching password for the access number."
+msgstr "Bitte geben Sie das passende Passwort für die Zugangsnummer ein."
+
+#: modules/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php:71
+msgid "Access password is required."
+msgstr "Zugangspasswort wird benötigt."
+
+#: modules/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php:74
+msgid "Save credentials"
+msgstr "Zugangsdaten speichern"
+
+#: modules/Stsbl/RepositoryMonitorBundle/EventListener/UpdateModeTrait.php:54
 #, php-format
 msgid "%s updates (StsBl repository)"
 msgstr "%s-Updates (StsBl-Repository)"
 
-#: src/Stsbl/RepositoryMonitorBundle/EventListener/ShellTrait.php:74
+#: modules/Stsbl/RepositoryMonitorBundle/EventListener/UpdateModeTrait.php:56
 #, php-format
 msgid ""
 "Your server is currently receiving %s updates from the repository of the "
@@ -50,41 +78,6 @@ msgstr ""
 "Ihr Server bezieht derzeit %s-Updates aus dem Repository der Stadtteilschule "
 "Blankenese."
 
-#: src/Stsbl/RepositoryMonitorBundle/EventListener/ShellTrait.php:75
-msgid "To change that, login as root and run the command stsbl-repoconfig."
-msgstr ""
-"Um das zu ändern, melden Sie sich als root an und führen den Befehl stsbl-"
-"repoconfig aus."
-
-#: src/Stsbl/RepositoryMonitorBundle/EventListener/ShellTrait.php:78
+#: modules/Stsbl/RepositoryMonitorBundle/EventListener/UpdateModeTrait.php:59
 msgid "For more information please refer to our documentation"
 msgstr "Für mehr Informationen lesen Sie unsere Dokumentation"
-
-#: src/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php:58
-msgid "Access number"
-msgstr "Zugangsnummer"
-
-#: src/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php:60
-msgid "Please enter the access number which you received via e-mail."
-msgstr "Bitte geben Sie die Zugangsnummer ein, die Sie per E-Mail erhalten "
-"haben."
-
-#: src/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php:63
-msgid "Access number is required."
-msgstr "Zugangsnummer wird benötigt."
-
-#: src/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php:66
-msgid "Access password"
-msgstr "Zugangspasswort"
-
-#: src/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php:68
-msgid "Please enter the matching password for the access number."
-msgstr "Bitte geben Sie das passende Passwort für die Zugangsnummer ein."
-
-#: src/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php:71
-msgid "Access password is required."
-msgstr "Zugangspasswort wird benötigt."
-
-#: src/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php:74
-msgid "Save credentials"
-msgstr "Zugangsdaten speichern"

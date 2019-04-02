@@ -2,8 +2,8 @@
 // src/Stsbl/RepositoryMonitorBundle/EventListener/IDeskListener.php
 namespace Stsbl\RepositoryMonitorBundle\EventListener;
 
-use IServ\CoreBundle\Event\IDeskEvent;
-use IServ\CoreBundle\EventListener\IDeskListenerInterface;
+use IServ\CoreBundle\Event\HomePageEvent;
+use IServ\CoreBundle\EventListener\HomePageListenerInterface;
 use IServ\CoreBundle\Util\System;
 use Stsbl\RepositoryMonitorBundle\Security\Privilege;
 
@@ -35,14 +35,14 @@ use Stsbl\RepositoryMonitorBundle\Security\Privilege;
  * @author Felix Jacobi <felix.jacobi@stsbl.de>
  * @license MIT license <https://opensource.org/licenses/MIT>
  */
-class IDeskListener implements IDeskListenerInterface
+class HomePageListener implements HomePageListenerInterface
 {
-    use ShellTrait;
+    use UpdateModeTrait;
     
     /**
      * {@inheritdoc}
      */
-    public function onBuildIDesk(IDeskEvent $event): void
+    public function onBuildHomePage(HomePageEvent $event): void
     {
         if (!$event->getAuthorizationChecker()->isGranted(Privilege::SRV_WARN)) {
             // exit if user is not allowed to see status warnings
