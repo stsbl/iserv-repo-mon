@@ -13,8 +13,10 @@ Depends: ${misc:Depends},
   ${perl:Depends},
   iserv-portal,
   stsbl-iserv-perl-lib,
-  stsbl-iserv3-repo-mon,
+  stsbl-iserv3-maintenance,
   stsbl-repoconfig,
+Conflicts: stsbl-iserv3-repo-mon,
+Replaces: stsbl-iserv3-repo-mon,
 Xb-Private-IServ-Revision: ${iserv:Revision}
 Description: Stadtteilschule Blankenese: Repository-Statusmonitor
  Zeigt den Status der Repository-Konfiguration auf dem IDesk an.

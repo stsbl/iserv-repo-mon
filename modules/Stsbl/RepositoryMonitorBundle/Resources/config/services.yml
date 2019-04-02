@@ -1,0 +1,20 @@
+services:
+    _defaults:
+        autoconfigure: true
+        autowire: true
+        public: false
+
+    Stsbl\RepositoryMonitorBundle\:
+        resource: '../../*'
+
+    Stsbl\RepositoryMonitorBundle\EventListener\AdminDashboardListener:
+        tags:
+         - { name: kernel.event_listener, event: iserv_admin.build_dashboard, method: onBuildDashboard }
+         
+    Stsbl\RepositoryMonitorBundle\EventListener\IDeskListener:
+        tags:
+         - { name: kernel.event_listener, event: iserv_portal.build_idesk, method: onBuildIDesk }
+         
+    Stsbl\RepositoryMonitorBundle\EventListener\MenuListener:
+        tags:
+         - { name: kernel.event_listener, event: iserv_portal.menu_admin, method: onBuildAdminMenu }
