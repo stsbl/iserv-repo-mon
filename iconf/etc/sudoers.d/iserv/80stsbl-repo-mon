@@ -1,2 +1,1 @@
-www-data	ALL = (root) NOPASSWD: /usr/lib/iserv/stsbl_repo_print_umode
 www-data	ALL = (root) NOPASSWD: /usr/lib/iserv/stsbl_repo_store_credentials
