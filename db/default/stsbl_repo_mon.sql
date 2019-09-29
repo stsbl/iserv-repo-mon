@@ -1,7 +1,7 @@
 /* 
  * The MIT License
  *
- * Copyright 2018 Felix Jacobi.
+ * Copyright 2019 Felix Jacobi.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,7 @@
  */
 /**
  * Author:  Felix Jacobi
- * Created: 27.01.2018
+ * Created: 27.01.2019
  */
 
 DELETE FROM news_abo WHERE source LIKE '%://it.stsbl.de/%';
