@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-02 01:07+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: modules/Stsbl/RepositoryMonitorBundle/EventListener/UpdateModeTrait.php
+#, php-format
+msgid "%s updates (StsBl repository)"
+msgstr ""
+
+#: modules/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php
+msgid "Access number"
+msgstr ""
+
+#: modules/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php
+msgid "Access number is required."
+msgstr ""
+
+#: modules/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php
+msgid "Access password"
+msgstr ""
+
+#: modules/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php
+msgid "Access password is required."
+msgstr ""
+
+#: /tmp/twig2php-stsbl-iserv-repo-mon/modules/Stsbl/RepositoryMonitorBundle/Resources/views/default/credentials.html.twig.php
+msgid ""
+"Credentials entered in the past are still saved, but not displayed for "
+"security reasons."
+msgstr ""
+
+#: modules/Stsbl/RepositoryMonitorBundle/EventListener/UpdateModeTrait.php
+msgid "For more information please refer to our documentation"
+msgstr ""
+
+#: modules/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php
+msgid "Please enter the access number which you received via e-mail."
+msgstr ""
+
+#: modules/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php
+msgid "Please enter the matching password for the access number."
+msgstr ""
+
+#: modules/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php
+msgid "Save credentials"
+msgstr ""
+
+#: modules/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php
+#: modules/Stsbl/RepositoryMonitorBundle/EventListener/MenuListener.php
+#: /tmp/twig2php-stsbl-iserv-repo-mon/modules/Stsbl/RepositoryMonitorBundle/Resources/views/default/credentials.html.twig.php
+msgid "StsBl-Repository: credentials"
+msgstr ""
+
+#: /tmp/twig2php-stsbl-iserv-repo-mon/modules/Stsbl/RepositoryMonitorBundle/Resources/views/default/credentials.html.twig.php
+msgid "Update credentials for the StsBl-Repository"
+msgstr ""
+
+#: modules/Stsbl/RepositoryMonitorBundle/EventListener/UpdateModeTrait.php
+#, php-format
+msgid ""
+"Your server is currently receiving %s updates from the repository of the "
+"Stadtteilschule Blankenese."
+msgstr ""
