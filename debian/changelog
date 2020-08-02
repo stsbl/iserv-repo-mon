@@ -1,3 +1,10 @@
+stsbl-iserv-repo-mon (20.08.02-1) testing; urgency=medium
+
+  * Bumped copyright
+  * Updated locale handling to use genpo
+
+ -- Felix Jacobi <Felix@jacobi-hamburg.net>  Sun, 02 Aug 2020 06:45:58 +0200
+
 stsbl-iserv-repo-mon (19.04.03-2) experimental; urgency=medium
 
   * Removed obsolete sudo entry
