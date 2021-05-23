@@ -1,5 +1,7 @@
 <?php
-// src/Stsbl/RepositoryMonitorBundle/EventListener/IDeskListener.php
+
+declare(strict_types=1);
+
 namespace Stsbl\RepositoryMonitorBundle\EventListener;
 
 use IServ\CoreBundle\Event\HomePageEvent;
@@ -35,10 +37,10 @@ use Stsbl\RepositoryMonitorBundle\Security\Privilege;
  * @author Felix Jacobi <felix.jacobi@stsbl.de>
  * @license MIT license <https://opensource.org/licenses/MIT>
  */
-class HomePageListener implements HomePageListenerInterface
+final class HomePageListener implements HomePageListenerInterface
 {
     use UpdateModeTrait;
-    
+
     /**
      * {@inheritdoc}
      */
@@ -50,7 +52,7 @@ class HomePageListener implements HomePageListenerInterface
         }
 
         $mode = $this->getUpdateMode();
-        
+
         if (System::UPDATEMODE_TESTING === $mode) {
             $event->addSidebarContent(
                 'admin.stsblupdatemode',

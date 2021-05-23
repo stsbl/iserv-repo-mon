@@ -1,5 +1,7 @@
 <?php
-// src/Stsbl/RepositoryMonitorBundle/EventListener/MenuListener.php
+
+declare(strict_types=1);
+
 namespace Stsbl\RepositoryMonitorBundle\EventListener;
 
 use IServ\AdminBundle\EventListener\AdminMenuListenerInterface;
@@ -35,7 +37,7 @@ use IServ\CoreBundle\Event\MenuEvent;
  * @author Felix Jacobi <felix.jacobi@stsbl.de>
  * @license MIT license <https://opensource.org/licenses/MIT>
  */
-class MenuListener implements AdminMenuListenerInterface
+final class MenuListener implements AdminMenuListenerInterface
 {
     /**
      * {@inheritdoc}
@@ -43,12 +45,12 @@ class MenuListener implements AdminMenuListenerInterface
     public function onBuildAdminMenu(MenuEvent $event): void
     {
         $menu = $event->getMenu()->getChild('system');
-        
+
         $item = $menu->addChild('stsbl_repomon_credentials', [
             'route' => 'admin_stsbl_repomon_credentials',
             'label' => _('StsBl-Repository: credentials'),
         ]);
-        
+
         $item->setExtra('icon', 'key--pencil');
         $item->setExtra('icon_style', 'fugue');
     }

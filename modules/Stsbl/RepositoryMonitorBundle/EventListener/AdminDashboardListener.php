@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Stsbl\RepositoryMonitorBundle\EventListener;
 
@@ -37,10 +39,10 @@ use Stsbl\RepositoryMonitorBundle\Security\Privilege;
  * @author Felix Jacobi <felix.jacobi@stsbl.de>
  * @license MIT license <https://opensource.org/licenses/MIT>
  */
-class AdminDashboardListener implements AdminDashboardListenerInterface
+final class AdminDashboardListener implements AdminDashboardListenerInterface
 {
     use UpdateModeTrait;
-    
+
     /**
      * {@inheritdoc}
      */
@@ -50,13 +52,15 @@ class AdminDashboardListener implements AdminDashboardListenerInterface
             // exit if user is not allowed to see status warnings
             return;
         }
-        
+
         $mode = $this->getUpdateMode();
-        
+
         if ($event instanceof AdminHomeEvent && System::UPDATEMODE_TESTING === $mode) {
             // don't add message on testing updates, as it is shown as "dangerous", IDeskListener handles this case.
             return;
-        } elseif (System::UPDATEMODE_UNSTABLE === $mode || System::UPDATEMODE_TESTING === $mode) {
+        }
+
+        if (System::UPDATEMODE_UNSTABLE === $mode || System::UPDATEMODE_TESTING === $mode) {
             // Inject into admin dashboard
             $event->addContent(
                 'admin.stsblupdatemode',

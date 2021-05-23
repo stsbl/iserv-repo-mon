@@ -1,9 +1,12 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Stsbl\RepositoryMonitorBundle;
 
 use Stsbl\RepositoryMonitorBundle\DependencyInjection\StsblRepositoryMonitorExtension;
 use IServ\CoreBundle\Routing\AutoloadRoutingBundleInterface;
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /*
@@ -34,12 +37,12 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  * @author Felix Jacobi <felix.jacobi@stsbl.de>
  * @license MIT license <https://opensource.org/licenses/MIT>
  */
-class StsblRepositoryMonitorBundle extends Bundle implements AutoloadRoutingBundleInterface
+final class StsblRepositoryMonitorBundle extends Bundle implements AutoloadRoutingBundleInterface
 {
     /**
      * {@inheritdoc}
      */
-    public function getContainerExtension(): StsblRepositoryMonitorExtension
+    public function getContainerExtension(): ?ExtensionInterface
     {
         return new StsblRepositoryMonitorExtension();
     }

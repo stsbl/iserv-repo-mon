@@ -1,4 +1,7 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
+
 namespace Stsbl\RepositoryMonitorBundle\EventListener;
 
 use IServ\CoreBundle\Exception\ShellExecException;
@@ -42,7 +45,7 @@ trait UpdateModeTrait
     {
         return trim(file_get_contents('/etc/iserv/update'));
     }
-    
+
     /**
      * Get data for dashboard
      *

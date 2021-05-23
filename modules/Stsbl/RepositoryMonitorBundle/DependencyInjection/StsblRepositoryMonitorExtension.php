@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Stsbl\RepositoryMonitorBundle\DependencyInjection;
 
@@ -34,6 +36,6 @@ use IServ\CoreBundle\DependencyInjection\IServBaseExtension;
  * @author Felix Jacobi <felix.jacobi@stsbl.de>
  * @license MIT license <https://opensource.org/licenses/MIT>
  */
-class StsblRepositoryMonitorExtension extends IServBaseExtension
+final class StsblRepositoryMonitorExtension extends IServBaseExtension
 {
 }

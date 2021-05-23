@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Stsbl\RepositoryMonitorBundle\Controller;
 
@@ -46,13 +48,12 @@ use Symfony\Component\Validator\Constraints\NotBlank;
  * @author Felix Jacobi <felix.jacobi@stsbl.de>
  * @license MIT license <https://opensource.org/licenses/MIT>
  */
-class DefaultController extends AbstractPageController
+final class DefaultController extends AbstractPageController
 {
     private function getCredentialsForm(): FormInterface
     {
-        /* @var $builder \Symfony\Component\Form\FormBuilder */
         $builder = $this->get('form.factory')->createNamedBuilder('stsbl_repo_mon_credentials');
-        
+
         $builder
             ->add('access_number', TextType::class, [
                 'label' => _('Access number'),
@@ -76,10 +77,10 @@ class DefaultController extends AbstractPageController
                 'icon' => 'ok',
             ])
         ;
-        
+
         return $builder->getForm();
     }
-    
+
     /**
      * Displays form for entering credentials.
      *
@@ -94,10 +95,10 @@ class DefaultController extends AbstractPageController
     ): array {
         $form = $this->getCredentialsForm();
         $form->handleRequest($request);
-        
+
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
-            
+
             $ip = $request->getClientIp();
             $fwdIp = preg_replace(
                 '/.*,\s*/',
@@ -105,12 +106,12 @@ class DefaultController extends AbstractPageController
                 $request->server->get('HTTP_X_FORWARDED_FOR', '')
             );
             $sessionPassword = $securityHandler->getSessionPassword();
-            
+
             $args = [
                 $this->getUser()->getUsername(),
                 $data['access_number'],
             ];
-            
+
             $env = [
                 'SESSPW' => $sessionPassword,
                 'ARG' => $data['access_password'],
@@ -127,15 +128,15 @@ class DefaultController extends AbstractPageController
             if (!empty($shell->getOutput())) {
                 $flash->success(implode("\n", $shell->getOutput()));
             }
-            
+
             if (!empty($shell->getError())) {
                 $flash->error(implode("\n", $shell->getError()));
             }
         }
-        
+
         // track path
         $this->addBreadcrumb(_('StsBl-Repository: credentials'), $this->generateUrl('admin_stsbl_repomon_credentials'));
-        
+
         return [
             'form' => $form->createView(),
             'help' => 'https://it.stsbl.de/repository/access',

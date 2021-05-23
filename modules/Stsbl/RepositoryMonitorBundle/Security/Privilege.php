@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace Stsbl\RepositoryMonitorBundle\Security;
 
@@ -35,5 +37,5 @@ final class Privilege
     /**
      * Viewing status warnings for the IServ Portalserver
      */
-    const SRV_WARN = 'PRIV_SRV_WARN';
+    public const SRV_WARN = 'PRIV_SRV_WARN';
 }
