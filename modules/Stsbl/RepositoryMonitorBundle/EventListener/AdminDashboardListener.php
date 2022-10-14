@@ -64,7 +64,7 @@ final class AdminDashboardListener implements AdminDashboardListenerInterface
             // Inject into admin dashboard
             $event->addContent(
                 'admin.stsblupdatemode',
-                'StsblRepositoryMonitorBundle:Dashboard:status.html.twig',
+                '@StsblRepositoryMonitor/Dashboard/status.html.twig',
                 $this->getDashboardData($mode)
             );
         }

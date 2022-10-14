@@ -56,7 +56,7 @@ final class HomePageListener implements HomePageListenerInterface
         if (System::UPDATEMODE_TESTING === $mode) {
             $event->addSidebarContent(
                 'admin.stsblupdatemode',
-                'StsblRepositoryMonitorBundle:Dashboard:status.html.twig',
+                '@StsblRepositoryMonitor/Dashboard/status.html.twig',
                 $this->getDashboardData($mode),
                 -1000
             );
