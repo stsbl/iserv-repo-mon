@@ -46,7 +46,7 @@ final class MenuListener implements AdminMenuListenerInterface
     {
         $menu = $event->getMenu()->getChild('system');
 
-        $item = $menu->addChild('stsbl_repomon_credentials', [
+        $item = $menu?->addChild('stsbl_repomon_credentials', [
             'route' => 'admin_stsbl_repomon_credentials',
             'label' => _('StsBl-Repository: credentials'),
         ]);
