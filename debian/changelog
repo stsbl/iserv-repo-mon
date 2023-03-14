@@ -1,3 +1,9 @@
+stsbl-iserv-repo-mon (23.03.14.1) stable; urgency=medium
+
+  * Replaced deprecated util usage
+
+ -- Felix Jacobi <Felix@jacobi-hamburg.net>  Tue, 14 Mar 2023 20:44:50 +0100
+
 stsbl-iserv-repo-mon (22.11.04.1) testing; urgency=medium
 
   * Replaced deprecated twig template syntax
