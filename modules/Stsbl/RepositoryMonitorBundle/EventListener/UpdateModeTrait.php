@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 namespace Stsbl\RepositoryMonitorBundle\EventListener;
 
-use IServ\CoreBundle\Exception\ShellExecException;
-use IServ\CoreBundle\Service\Shell;
-use IServ\CoreBundle\Util\System;
-
 /*
  * The MIT License
  *
@@ -32,12 +28,20 @@ use IServ\CoreBundle\Util\System;
  * THE SOFTWARE.
  */
 
+use IServ\Library\UpdateMode\UpdateMode;
+use IServ\Library\UpdateMode\UpdateModeProviderInterface;
+
 /**
  * @author Felix Jacobi <felix.jacobi@stsbl.de>
  * @license MIT license <https://opensource.org/licenses/MIT>
  */
 trait UpdateModeTrait
 {
+    public function __construct(
+        private readonly UpdateModeProviderInterface $updateModeProvider,
+    ) {
+    }
+
     /**
      * Get current update mode
      */
@@ -51,13 +55,13 @@ trait UpdateModeTrait
      *
      * @return string[]
      */
-    protected function getDashboardData(string $mode): array
+    protected function getDashboardData(UpdateMode $mode): array
     {
         return [
             'title' => __('%s updates (StsBl repository)', $mode),
             'icon' => ['style' => 'fugue', 'name' => 'drive-globe'],
-            'text' => __('Your server is currently receiving %s updates from the repository of the Stadtteilschule Blankenese.', $mode),
-            'mode' => $mode,
+            'text' => __('Your server is currently receiving %s updates from the repository of the Stadtteilschule Blankenese.', $mode->toString()),
+            'mode' => $mode->toString(),
             'link' => 'https://it.stsbl.de/documentation/general/update-mode',
             'link_text' => _('For more information please refer to our documentation'),
             'panel_class' => 'panel-warning',

@@ -6,7 +6,8 @@ namespace Stsbl\RepositoryMonitorBundle\EventListener;
 
 use IServ\CoreBundle\Event\HomePageEvent;
 use IServ\CoreBundle\EventListener\HomePageListenerInterface;
-use IServ\CoreBundle\Util\System;
+use IServ\Library\UpdateMode\Exception\CannotDetermineUpdateModeException;
+use IServ\Library\UpdateMode\UpdateMode;
 use Stsbl\RepositoryMonitorBundle\Security\Privilege;
 
 /*
@@ -51,9 +52,13 @@ final class HomePageListener implements HomePageListenerInterface
             return;
         }
 
-        $mode = $this->getUpdateMode();
+        try {
+            $mode = $this->updateModeProvider->updateMode();
+        } catch (CannotDetermineUpdateModeException) {
+            return;
+        }
 
-        if (System::UPDATEMODE_TESTING === $mode) {
+        if ($mode->equals(UpdateMode::testing())) {
             $event->addSidebarContent(
                 'admin.stsblupdatemode',
                 '@StsblRepositoryMonitor/Dashboard/status.html.twig',

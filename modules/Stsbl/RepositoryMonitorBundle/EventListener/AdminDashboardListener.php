@@ -7,8 +7,8 @@ namespace Stsbl\RepositoryMonitorBundle\EventListener;
 use IServ\AdminBundle\Event\AdminDashboardEvent;
 use IServ\AdminBundle\Event\AdminHomeEvent;
 use IServ\AdminBundle\EventListener\AdminDashboardListenerInterface;
-use IServ\CoreBundle\Service\Shell;
-use IServ\CoreBundle\Util\System;
+use IServ\Library\UpdateMode\Exception\CannotDetermineUpdateModeException;
+use IServ\Library\UpdateMode\UpdateMode;
 use Stsbl\RepositoryMonitorBundle\Security\Privilege;
 
 /*
@@ -53,14 +53,18 @@ final class AdminDashboardListener implements AdminDashboardListenerInterface
             return;
         }
 
-        $mode = $this->getUpdateMode();
+        try {
+            $mode = $this->updateModeProvider->updateMode();
+        } catch (CannotDetermineUpdateModeException) {
+            return;
+        }
 
-        if ($event instanceof AdminHomeEvent && System::UPDATEMODE_TESTING === $mode) {
+        if ($event instanceof AdminHomeEvent && $mode->equals(UpdateMode::testing())) {
             // don't add message on testing updates, as it is shown as "dangerous", IDeskListener handles this case.
             return;
         }
 
-        if (System::UPDATEMODE_UNSTABLE === $mode || System::UPDATEMODE_TESTING === $mode) {
+        if ($mode->equals(UpdateMode::testing()) || $mode->equals(UpdateMode::unstable())) {
             // Inject into admin dashboard
             $event->addContent(
                 'admin.stsblupdatemode',
