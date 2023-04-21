@@ -7,7 +7,6 @@ namespace Stsbl\RepositoryMonitorBundle\Controller;
 use IServ\CoreBundle\Controller\AbstractPageController;
 use IServ\CoreBundle\Exception\ShellExecException;
 use IServ\CoreBundle\Security\Core\SecurityHandler;
-use IServ\CoreBundle\Service\Flash;
 use IServ\CoreBundle\Service\Shell;
 use IServ\Library\Flash\FlashInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
