@@ -9,6 +9,7 @@ use IServ\CoreBundle\Exception\ShellExecException;
 use IServ\CoreBundle\Security\Core\SecurityHandler;
 use IServ\CoreBundle\Service\Flash;
 use IServ\CoreBundle\Service\Shell;
+use IServ\Library\Flash\FlashInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -89,7 +90,7 @@ final class DefaultController extends AbstractPageController
      */
     public function credentialsAction(
         Request $request,
-        Flash $flash,
+        FlashInterface $flash,
         SecurityHandler $securityHandler,
         Shell $shell
     ): array {
