@@ -1,17 +1,12 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# TRANSLATION CATALOG OF STSBL-ISERV-REPO-MON.
+# Copyright (C) 2023 IServ GmbH
+# This file is distributed under the same license as the stsbl-iserv-repo-mon package.
+# IServ GmbH <info@iserv.eu>, 2023.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-02 01:07+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Project-Id-Version: stsbl-iserv-repo-mon\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,7 +33,7 @@ msgstr ""
 msgid "Access password is required."
 msgstr ""
 
-#: /tmp/twig2php-stsbl-iserv-repo-mon/modules/Stsbl/RepositoryMonitorBundle/Resources/views/default/credentials.html.twig.php
+#: modules/Stsbl/RepositoryMonitorBundle/Resources/views/default/credentials.html.twig.php
 msgid ""
 "Credentials entered in the past are still saved, but not displayed for "
 "security reasons."
@@ -60,13 +55,13 @@ msgstr ""
 msgid "Save credentials"
 msgstr ""
 
-#: modules/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php
 #: modules/Stsbl/RepositoryMonitorBundle/EventListener/MenuListener.php
-#: /tmp/twig2php-stsbl-iserv-repo-mon/modules/Stsbl/RepositoryMonitorBundle/Resources/views/default/credentials.html.twig.php
+#: modules/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php
+#: modules/Stsbl/RepositoryMonitorBundle/Resources/views/default/credentials.html.twig.php
 msgid "StsBl-Repository: credentials"
 msgstr ""
 
-#: /tmp/twig2php-stsbl-iserv-repo-mon/modules/Stsbl/RepositoryMonitorBundle/Resources/views/default/credentials.html.twig.php
+#: modules/Stsbl/RepositoryMonitorBundle/Resources/views/default/credentials.html.twig.php
 msgid "Update credentials for the StsBl-Repository"
 msgstr ""
 

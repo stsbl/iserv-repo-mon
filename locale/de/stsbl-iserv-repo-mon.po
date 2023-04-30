@@ -38,7 +38,7 @@ msgstr "Zugangspasswort"
 msgid "Access password is required."
 msgstr "Zugangspasswort wird benötigt."
 
-#: /tmp/twig2php-stsbl-iserv-repo-mon/modules/Stsbl/RepositoryMonitorBundle/Resources/views/default/credentials.html.twig.php
+#: modules/Stsbl/RepositoryMonitorBundle/Resources/views/default/credentials.html.twig.php
 msgid ""
 "Credentials entered in the past are still saved, but not displayed for "
 "security reasons."
@@ -63,13 +63,13 @@ msgstr "Bitte geben Sie das passende Passwort für die Zugangsnummer ein."
 msgid "Save credentials"
 msgstr "Zugangsdaten speichern"
 
-#: modules/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php
 #: modules/Stsbl/RepositoryMonitorBundle/EventListener/MenuListener.php
-#: /tmp/twig2php-stsbl-iserv-repo-mon/modules/Stsbl/RepositoryMonitorBundle/Resources/views/default/credentials.html.twig.php
+#: modules/Stsbl/RepositoryMonitorBundle/Controller/DefaultController.php
+#: modules/Stsbl/RepositoryMonitorBundle/Resources/views/default/credentials.html.twig.php
 msgid "StsBl-Repository: credentials"
 msgstr "StsBl-Repository: Zugangsdaten"
 
-#: /tmp/twig2php-stsbl-iserv-repo-mon/modules/Stsbl/RepositoryMonitorBundle/Resources/views/default/credentials.html.twig.php
+#: modules/Stsbl/RepositoryMonitorBundle/Resources/views/default/credentials.html.twig.php
 msgid "Update credentials for the StsBl-Repository"
 msgstr "Zugangsdaten für das StsBl-Repository aktualisieren"
 
