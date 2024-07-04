@@ -4,7 +4,6 @@ debian/stsbl-iserv-repo-mon.substvars
 debian/debhelper-build-stamp
 debian/files
 /Makefile.iservmake
-/locale
 /system-locale
 !/locale/templates/*_misc.pot
 /public/assets
